@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>BUDDY'S PIZZA</title>
+</head>
+<style>
+  .row{
+    padding-left: 1130px;
+    font-size: larger;
+    margin-top: 30px;
+  
+    
+  }
+  input[type=email], input[type=password] {
+  width: 90%;
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.clearfix{
+  background-color: #f4f6f5;
+  color: white;
+  padding: 10px 15px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  opacity: 0.9;
+}
+
+.clearfix:hover {
+  opacity:1;
+  
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 10px 15px;
+  background-color: #f44336;
+}
+.loginbtn {
+  padding: 10px 17px; 
+  padding-left: 10px;
+  background-color: #f4eb36;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .loginbtn {
+  float: left;
+  width: 20%;
+  padding-left: 12px;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 5px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 80%; /* Full width */
+  height: 80%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #72757b;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 3% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+ 
+  .cancelbtn, .loginbtn {
+     width: 50%;
+  }
+
+
+.header {
+    background-color: white;
+    font-size: 13px;
+    text-decoration: dotted;
+}
+
+.header h2{
+    margin: 12px 25px;
+      color:rgb(255, 234, 0);
+       left: 40px;
+        font-size: 30px;
+        position: absolute;
+        justify-content: space-between;
+        display: flex;
+        font-style: bold;
+        margin-top: -25px;
+       
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: rgb(46, 43, 43);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  padding-left: 500px;
+  margin-top: -35px;
+
+ 
+
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgb(30, 27, 27);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+.search-container {
+  float: right;
+
+
+ 
+}
+.search-container  {
+  padding-left: 920px;
+  font-size: 10px;
+  border: none;
+ margin-top: -34px;
+ width: 50px;
+
+
+ 
+}
+
+
+ 
+.search-container {
+    float: none;
+    margin-bottom: 10px;
+    width: 65px;
+    height: 40px;
+    padding-left: 920px;
+  
+  }
+
+  .min{
+    padding-left: 170px;
+    margin-top: -21.6px;
+  }
+ 
+  * {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #ba2e16;
+  font-size: 50px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+  font-style: bold;
+  font-weight: bolder;
+  top:80px;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+.row1 h1{
+    font-size: 50px;
+    font-style: Anton;
+    text-align: center;
+    justify-content: center;
+ 
+  margin-top:80px;
+
+
+
+}
+.flex{
+    display: flex;
+}
+.shopping-card {
+    
+  
+    display: inline-block;
+    padding-inline-start: 2px;
+}
+.box1{
+        border: 2px solid rgb(167, 162, 162);
+        width: 400px;
+        height: 300px;
+        background-color: white;
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+.box1 img{
+    width: 280px;
+   height: 200px;
+    display: inline-block;
+    margin-top:20px;
+    margin-left: 70px;
+    margin: 0px 50px;
+    margin-right: 30px;
+
+}
+.box1 p{
+    font-size: 17px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.box2{
+        border: 2px solid rgb(167, 162, 162);
+        width: 340px;
+        height: 290px;
+        background-color: white;
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+.box2 img{
+   
+    width: 300px;
+    height: 200px;
+   
+    display: inline-block;
+}
+
+.box2 p{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+  margin-bottom: 15px;
+}
+.box3{
+        border: 2px solid rgb(167, 162, 162);
+        width: 340px;
+        height: 290px;
+        background-color: white;
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.box3 img{
+    
+    width: 310px;
+    margin-top: 15px;
+    display: inline-block;
+    height: 180px;
+}
+.box3 p{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+}
+.box4{
+        border: 2px solid rgb(167, 162, 162);
+        width: 340px;
+        height: 290px;
+        background-color: white;
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.box4 img{
+    
+    width: 300px;
+    height: 190px;
+   margin-top: 15px;
+    display: inline-block;
+}
+.box4 p{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+}
+.row2 h1{
+    font-size: 50px;
+    font-style: Anton;
+    text-align: right;
+    justify-content: center;
+    padding-right: 40%;
+    margin-bottom: 20px;
+ 
+}
+.flex1{
+    display: flex;
+   
+}
+.row3 img{
+    width: 420px;
+   height: 430px;
+    display: inline-block;
+   margin-top: -25px;
+}
+.row4{
+        border: 2px solid rgb(167, 162, 162);
+        width: 210px;
+        height: 200px;
+        background-color:  rgb(242, 237, 237);;
+        margin: 0px 100px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.row4 img{
+    
+    width: 150px;
+    margin-top: 0px;
+    display: inline-block;
+    height: 160px;
+   
+}
+
+
+.row4 p{
+   
+    font-size:25px;
+    text-align: center;
+    text-decoration: underline;
+}
+.row5{
+        border: 2px solid rgb(167, 162, 162);
+        width: 210px;
+        height: 200px;
+        background-color: rgb(237, 228, 228);
+        margin: 80px 0px;
+        border-radius: 10px;
+        text-align: center;
+       
+        margin-top: 40px;
+    }
+.row5 img{
+    
+    width:150px;
+    margin-top: 0px;
+    display: inline-block;
+    height: 160px;
+   
+}
+
+
+.row5 p{
+   
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+.row6{
+        border: 2px solid rgb(167, 162, 162);
+        width: 210px;
+        height: 200px;
+        background-color: rgb(242, 237, 237);
+        margin: 0px 100px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.row6 img{
+    
+    width: 150px;
+    margin-top: 0px;
+    display: inline-block;
+    height: 160px;
+   
+   
+}
+
+
+.row6 p{
+   
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+.row7{
+        border: 2px solid rgb(167, 162, 162);
+        width: 210px;
+        height: 200px;
+        background-color: rgb(242, 237, 237);
+        margin: 80px 0px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 35px;
+    }
+.row7 img{
+    
+    width: 150px;
+    margin-top: 0px;
+    display: inline-block;
+    height: 160px;
+   
+   
+}
+
+
+.row7 p{
+   
+    font-size: 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+.col1 h2{
+    font-size: 50px;
+    font-style: Anton;
+    text-align: right;
+    justify-content: center;
+    padding-right: 35%;
+    margin-bottom: 20px;
+    font-style: bold;
+ 
+}
+.flex2{
+    display: flex;
+  
+}
+.shopping-card{
+    
+    display: inline-block;
+    padding-inline-start: 1px;
+}
+.max1{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(235, 233, 233);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.max1 img{
+    width: 220px;
+    height: 150px;
+    margin: 0px 20px;
+   
+    display: inline-block;
+}
+
+.max1 p{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.max2{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(231, 224, 224);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+.max2 img{
+   
+    width: 200px;
+    height: 150px;
+    margin: 0px 40px;
+    display: inline-block;
+}
+.max2 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.max3{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(234, 225, 225);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.max3 img{
+    
+    width: 230px;
+    height: 150px;
+    margin: 0px 20px;
+    display: inline-block;
+}
+.max3 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+  
+}
+.max4{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(222, 212, 212);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.max4 img{
+    
+    width: 200px;
+   height: 150px;
+   margin: 0px 40px;
+    display: inline-block;
+}
+
+.max4 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.max5{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(232, 225, 225);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+       
+    }
+.max5 img{
+    
+    width: 200px;
+   height: 150px;
+   margin: 0px 40px;
+    display: inline-block;
+   
+}
+.max5 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.col2 h1{
+    font-size: 50px;
+    font-style: Anton;
+    text-align: right;
+    justify-content: center;
+    padding-right: 35%;
+    margin-bottom: 20px;
+    font-style: bold;
+    color:#4f504d;
+    text-decoration: underline;
+}
+.col3 p{
+    font-size: 50px;
+    font-style: Anton;
+    text-align: center;
+    justify-content: center;
+}
+.flex3{
+    display: flex;
+}
+.shopping-card{
+    
+    display: inline-block;
+    padding-inline-start: 1px;
+}
+.fig1{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(240, 200, 200);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.fig1 img{
+    width: 200px;
+    height: 150px;
+    margin: 0px 40px;
+    display: inline-block;
+}
+
+.fig1 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.fig2{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(240, 200, 200);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+.fig2 img{
+   
+    width: 200px;
+    height: 150px;
+    margin: 0px 40px;
+    display: inline-block;
+}
+.fig2 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.fig3{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(240, 200, 200);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.fig3 img{
+    
+    width: 200px;
+    height: 150px;
+    margin: 0px 40px;
+    display: inline-block;
+}
+.fig3 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+  
+}
+.fig4{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(240, 200, 200);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+    }
+.fig4 img{
+    
+    width: 200px;
+   height: 150px;
+   margin: 0px 40px;
+    display: inline-block;
+}
+
+.fig4 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.fig5{
+        border: 2px solid rgb(167, 165, 165);
+        width: 300px;
+        height: 220px;
+        background-color: rgb(240, 200, 200);
+        margin: 0px 25px;
+        border-radius: 10px;
+        text-align: center;
+       
+    }
+.fig5 img{
+    
+    width: 200px;
+   height: 150px;
+    display: inline-block;
+    margin: 0px 40px;
+}
+.fig5 p{
+    font-size: smaller;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: -2px;
+}
+.card a{
+    text-align: center;
+   position: relative;
+ left:275px;
+ font-size: 25px;
+ margin-top: 50px;
+}
+.p{
+   text-align: right;
+   padding-left: 30px;
+}
+.min h2{
+       right:80%;
+       margin-top: 80px;
+        text-decoration: underline;
+        position: relative;
+        color: rgb(10, 10, 8);
+        font-size: 20px;
+        text-align: right;
+        bottom: 0px;
+        font-style:bold;
+  
+}
+.min p{
+    text-align: center;
+    right:50px;
+       
+        text-decoration: underline;
+        position: relative;
+        color: rgb(10, 10, 8);
+        font-size: 20px;
+       margin-top: 17px;
+        bottom: 40px;
+        font-style:bold;
+
+    
+}
+.max img{
+    position: relative;
+text-align: center;
+bottom: 165px;
+margin-top:40px;
+left:1300px;
+width: 200px;
+}
+
+</style>
+</head>
+<body>
+  <div class="row">
+  <button onclick="document.getElementById('id01').style.display='block'" style=" text-align: left;">Sign Up</button>
+</div>
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="email" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="loginbtn">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+<div class="header">
+  <h2><b>BUDDY'S PIZZA</b></h2>
+  </div>
+<div class="navbar">
+  <a href="#home">HOME</a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()">MENU
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="#">Pizza</a>
+    <a href="#">Pasta</a>
+    <a href="#">Noodles</a>
+    <a href="#">Drinks</a>
+    <a href="#">Burgers</a>
+    <a href="#">Cakes</a>
+    
+    </div>
+  </div>
+  <a href="#order">ORDER</a>
+  <a href="#contactus">CONTACT US</a>
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>   
+</div>
+<div class="search-container">
+    
+  <input type="text" placeholder="Search.." name="search">
+  <div class="min">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</div>
+</div>
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+      
+      <img src="logo.jpg"style="width:100%;height: 450px;">
+      <div class="text"></div>
+    </div>
+    
+    <div class="mySlides fade">
+    
+      <img src="burger.jpg" style="width:100%;height: 450px;">
+      <div class="text"></div>
+    </div>
+    
+    
+    <div class="mySlides fade">
+     
+        <img src="pi.jpg" style="width:100%;height: 450px;">
+        <div class="text"></div>
+      </div>
+      
+    </div>
+    <br>
+    
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+    </div>
+    
+    <script>
+    let slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    </script>
+    <div class="row1">
+    <h1><b>FRESH AND DELICIOUS</b></h1>
+</div>
+<div class="flex">
+    <div class="box1">
+        <div class="shopping-card" >
+        <img src="burger2.jpg"">
+        <a href="#">BUY NOW</a>
+        <p>Cheese Burger</p>
+        <p>$230</p>
+    </div>
+    </div>
+    <div class="box2">
+        <div class="shopping-card" >
+        <img src="choco.jpg" alt="">
+        <a href="#">BUY NOW</a>
+        <p>Choco Lava cake</p>
+         <p>$230</p>
+        
+    </div>
+    </div>
+    <div class="box3">
+        <div class="shopping-card" >
+        <img src="garlic.jpg" alt="">
+        <a href="#" >BUY NOW</a>
+        <p>Garlic Bread</p>
+        <p>$250</p>
+    </div>
+</div>
+    <div class="box4">
+        <div class="shopping-card" >
+        <img src="cakes.jpg" alt="">
+        <a href="#">BUY NOW</a>
+        <p>Cakes</p>
+        <p>$250</p>
+    </div>
+</div>
+</div>
+    <div class="row2">
+    <h1>PIZZA</h1>
+    </div>
+    <hr>
+    <div class="flex1">
+   <div class="row3">
+    <img src="pizza 2.jpg" alt="">
+   </div>
+   <div class="row4">
+    <img src="farm.jpg" alt=""> 
+    <input class="btn btn-primary" type="button" value="SHOP NOW"> 
+    <p>Farm House Pizza</p>
+    <p>$370</p>
+   </div>
+   <div class="row5">
+    <img src="capsicum.jpg" alt=""> 
+    <input class="btn btn-primary" type="button" value="SHOP NOW"> 
+    <p>Capsicum Pizza</p>
+    <p>$340</p>
+</div>
+<div class="row6">
+    <img src="pizza1.jpg" alt=""> 
+    <input class="btn btn-primary" type="button" value="SHOP NOW"> 
+    <p>Veggie Pizza</p>
+    <p>$380</p>
+</div>
+<div class="row7">
+    <img src="chicken.jpg" alt=""> 
+    <input class="btn btn-primary" type="button" value="SHOP NOW"> 
+    <p>Chicken Pizza</p>
+    <p>$420</p>
+</div>
+
+
+</div>
+<div class="col1">
+    <h2>COMBO OFFERS</h2>
+</div>
+<div class="flex2">
+    <div class="max1">
+        <div class="shopping-card" >
+        <img src="pizza combo.jpg" alt="">
+        <a href="#">SHOP NOW</a>
+        <p>Pizza Combo</p>
+        <p>$170</p>
+    </div>
+    </div>
+    <div class="max2">
+        <div class="shopping-card" >
+        <img src="burger combo.jpg" alt="">
+        <a href="#">SHOP NOW</a>
+        <p>Burger Combo</p>
+        <p>$120</p>
+    </div>
+    </div>
+    <div class="max3">
+        <div class="shopping-card" >
+        <img src="bur combo.jpg" alt="">
+        <a href="#">SHOP NOW</a>
+        <p>Pizza + Burger Combo</p>
+        <p>$140</p>
+    </div>
+</div>
+    <div class="max4">
+        <div class="shopping-card" >
+           
+        <img src="large.jpg" alt="">
+        <a href="#">SHOP NOW</a>
+        <p>Regular Combo</p>
+        <p>$190</p>
+    </div>
+</div>
+<div class="max5">
+    <div class="shopping-card" >
+        <img src="combo.jpg" alt="">
+    <a href="#">SHOP NOW</a>
+    <p>Large Combo</p>
+    <p>$150</p>
+</div>
+</div>
+</div>
+</div>
+    <div class="col2">
+        <h1>#MOST POPULAR
+        </h1>
+    </div>
+    <div class="col3">
+      <p>Top Picks </p> 
+    </div>
+    <div class="flex3">
+        <div class="fig1">
+            <div class="shopping-card" >
+            <img src="to.jpg" alt="">
+            <a href="#">SHOP NOW</a>
+            <p>Tasty And Fresh</p>
+            <p>$270</p>
+        </div>
+        </div>
+        <div class="fig2">
+            <div class="shopping-card" >
+            <img src="burger2.jpg" alt="">
+            <a href="#">SHOP NOW</a>
+            <p>Overloaded Cheese Burger</p>
+            <p>$110</p>
+        </div>
+        </div>
+        <div class="fig3">
+            <div class="shopping-card" >
+            <img src="pizza.jpg" alt="">
+            <a href="#">SHOP NOW</a>
+            <p>Farm House Pizza</p>
+            <p>$240</p>
+        </div>
+    </div>
+        <div class="fig4">
+            <div class="shopping-card" >
+               
+            <img src="choco.jpg" alt="">
+            <a href="#">SHOP NOW</a>
+            <p>Choco lava cake</p>
+            <p>$290</p>
+        </div>
+    </div>
+    <div class="fig5">
+        <div class="shopping-card" >
+            <img src="white sauce.jpg" alt="">
+        <a href="#">SHOP NOW</a>
+        <p>Pasta</p>
+        <p>$250</p>
+    </div>
+</div>
+</div>
+</div>
+
+<hr>
+<hr>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ipsa sint minus blanditiis! Tempora quae, voluptate, commodi deleniti debitis quos illo accusamus necessitatibus reprehenderit quam fugiat iste velit in error?Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae quas quis nostrum minima? Porro obcaecati numquam ut quos! Similique, voluptatem. Earum praesentium voluptates dolor iusto libero deleniti?</p>
+<div class="min">
+<h2>BUDDY'S PIZZA</h2>
+<p>@2023 Destination Unknown.All Rights Reserved</p>
+</div>
+<div class ="max">
+    <img src="payment.jpg" alt="">
+</div>
+
+     
+    
+      
+    </body>
+</html>
